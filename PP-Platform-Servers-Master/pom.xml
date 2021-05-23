@@ -21,6 +21,11 @@
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
 				<version>${spring.boot.version}</version>
 			</dependency>
@@ -63,5 +68,6 @@
 	<modules>
 		<module>PP-Platform-Spring-Config-Server</module>
 		<module>PP-Platform-Spring-Registry-Server</module>
+		<module>PP-Platform-Client-Servers-Spring-Registry</module>
 	</modules>
 </project>
