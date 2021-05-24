@@ -25,6 +25,10 @@
 			<artifactId>PP-Platform-Spring-API-GW</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>jk.provider.portal.platform.configs</groupId>
+			<artifactId>PP-All-Configs</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -97,7 +101,7 @@
 									<!-- <tag>${project.version}</tag> -->
 								</tags>
 								<ports>
-									<port>8080</port>
+									<port>8002</port>
 									<port>6100</port>
 								</ports>
 								<runCmds>

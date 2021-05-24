@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pp-platform-server-spring-apigw
+  labels:
+    app: pp-platform-server-spring-apigw
+    department: platform-server-spring-apigw
+spec:
+  selector:
+    matchLabels:
+      app: pp-platform-server-spring-apigw
+      department: platform-server-spring-apigw
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: pp-platform-server-spring-apigw
+        department: platform-server-spring-apigw
+    spec:
+      containers:
+      - name: pp-platform-server-spring-apigw
+        image: "provider-proposal/platform-server-spring-apigw-maven"
+        imagePullPolicy: Never
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8002
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 60
+          successThreshold: 1
+          timeoutSeconds: 10
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8002
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 60
+          successThreshold: 1
+          timeoutSeconds: 10
+        ports:
+        - containerPort: 8002
